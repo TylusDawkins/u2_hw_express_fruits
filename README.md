@@ -118,7 +118,7 @@ Recall you can access the URL parameters with `req.params`
 Remember that you can create variables above your response
 
 
-#### `evens`
+#### `evens/:n`
 `GET` `/evens/:n` should return an array of even numbers from 2 up to and including `n`.  So when you call this route, `n` in the URL should be a number.
 
 Also, you may need to use `parseInt()` to cast the supplied `n` parameter to a number when adding it to your array
@@ -133,7 +133,7 @@ ___
 
 `GET` `/fruits` should return an array with all the fruits.
 
-Let's add a route that retrieves all the fruits from our `fruits.js` file. Recall we imported it on top of our `index.js`.
+Let's add a route that retrieves all of the fruits (_the whole array_) from our `fruits.js` file. Recall we imported it on top of our `index.js`.
 
 ```js
 app.get('/fruits', (req, res) => {
@@ -153,8 +153,11 @@ app.get('/fruits/:name', (req, res) => {
 })
 ```
 
-Recall you can access the url parameters with `req.params`.
-So when you call this route, `name` in the url should be a **capitalized** string(refer to `fruits.js`, if you are unsure).
+Recall you can access the URL parameters with `req.params`.
+
+However, you might notice that the fruit names in `fruits.js` are **Capitalized**. You could send a Capitalized string in the URL params to make it work, but what if you wanted to make sure your params worked every time?
+- One useful string method to look into here might be [.toLowerCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+- If you aren't familiar with it, [.find()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find) may also be useful somewhere in this function
 
 ___
 ## Bonus 
