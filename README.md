@@ -160,9 +160,15 @@ However, you might notice that the fruit names in `fruits.js` are **Capitalized*
 - If you aren't familiar with it, [.find()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find) may also be useful somewhere in this function
 
 ___
+## Requirements
+- The project must be initialized as a `Node.js` and set up as an express app.
+- All basic routes must send the proper data specified for the route using express's request and response objects
+- All fruit routes must send the proper data specified for the route using express's request and response objects
+
+
 ## Bonus 
 
-`GET` `/fruits/sort` should return the fruits array sorted alphabetically using `.sort`. 
+`GET` `/fruits/sort` should return the fruits array sorted alphabetically using [.sort()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort). 
 
 ```js
 app.get('/fruits/sort', (req, res) => {
@@ -172,8 +178,35 @@ app.get('/fruits/sort', (req, res) => {
 })
 ```
 
+<details><summary><sup>Secret Bonus</sup></summary>
+	
+   <br />
+	
+   What if we wanted to add a catch-all route to our express app so some crazy fruit ninja doesn't go breaking things?
+   
+   To prepare for that, let's add this quick route at the **very bottom** of our routes, just above `app.listen()`
+   
+   ```js
+   app.get('*', (req, res) => {
+     res.send('404 Not Found')
+   })
+   ```
+   
+   A couple important things to note:
+   - The `*` used for a route will cover _any_ route request made to our server, meaning that it will respond with this 404 message for any URL param chained on to `http://localhost:8000`
+   - That being said, since it will respond to _any_ route, we put it at the **bottom** of our server, so our other routes are still accessible while routes that don't exist will be sent to an error message
+   - Use it wisely if you choose to
+
+   ![great power](https://31.media.tumblr.com/tumblr_lqb3ag4MPc1r1edcbo1_500.gif)
+
+</details>
+
+## Submission Guidelines
+- Pull Request must be submitted utilizing these guidelines: [PR Guidelines](https://github.com/SEI-R-1-25/template_pull_request)
 
 ## Resources
+- [Intro to Express Lesson](https://github.com/SEI-R-1-25/u2_lesson_express)
+- [Intro to Routes Lesson](https://github.com/SEI-R-1-25/u2_lesson_express_routing)
 - [Additional Reading on req.params](https://coursework.vschool.io/express-params-and-query/)
 
 
