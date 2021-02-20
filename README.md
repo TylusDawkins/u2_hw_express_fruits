@@ -1,6 +1,6 @@
 # 🍍🍇🍐 Express Fruits 🍓🍌🥭
 
-
+![fruit](https://s3.amazonaws.com/secretsaucefiles/photos/images/000/104/044/large/fruit-dancing-gif.gif?1485312342)
 
 ## Overview
 
