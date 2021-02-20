@@ -63,8 +63,47 @@ app.get('/ping', (req, res) => {
 - Try to test this route out by navigating to `http://localhost:8000/ping` with your web browser.
 - Alternatively, you could test this route by using a tool like [Insomnia](https://insomnia.rest/) to make a `GET` request to the same URL.
 
-Now that's what I call computer ping-pong! Let's create a few more routes to ping our express server with below.
+Now that's what I call computer ping-pong! Let's create a few more routes to ping our express server with below. Before doing so, let's recall the basic syntax for an express `GET` route request made with an instance of express. In this case `app` is our express instance:
 
+```js
+app.get('/someroute', (req, res) => {
+  // do something here if necessary before the response
+  res.send(data)
+  // send data back in response to the incoming request
+})
+```
+<details><summary>Notes on the <code>GET</code> route request method if you'd like more information</summary>
+  
+  <br />
+  
+  Routes are the first argument of the `.get()` method
+  - Routes are _**always**_ `strings` denoting URL parameters 
+  
+	  ```js
+	  // The route of a GET request method
+	  app.get('/someroute', // callback here
+	  ```
+	  
+  The `.get()` method requires a callback function as its second argument. In the arguments for this callback function, we'll ALWAYS pass the Request followed by the Response object, typically with `(req, res)` for shorthand.
+  
+  - Inside the callback, we'll typically send some sort of `responseData` (_strings, arrays, objects, booleans, numbers_) related to the incoming request with the response object's `.send()` method
+  
+  	```js
+	// The callback function within a GET request method
+	(req, res) => {
+	  res.send(responseData)
+	}
+	```
+	
+  - Now, putting it all together:
+	  
+	  ```js
+	  app.get('/someroute', (req, res) => {
+	    res.send(responseData)
+	  })
+	  ```
+	
+</details>
 
 #### `/greet/:name`
 - `GET` `/greet/:name` should return a greeting with the supplied name, e.g., 'Why hello there, <name>!'
