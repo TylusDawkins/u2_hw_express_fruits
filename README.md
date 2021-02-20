@@ -65,29 +65,30 @@ Try to test this route out by navigating to `http://localhost:8000/ping` with yo
 
 Now that's what I call computer ping-pong!
 
-___
+
 #### `/greet/:name`
 
 `GET` `/greet/:name` should return a greeting with the supplied name, e.g., 'Why hello there, <name>!'
 
 Recall you can access the url parameters with `req.params`
 
-___
+
 #### `/five`
 
 `GET` `/five` should return an array of the numbers from 1-5
 
-___
+
 #### `evens`
 `GET` `/evens/:n` should return an array of even numbers from 2 up to and including `n`.  So when you call this route, `n` in the url should be a number.
 
 Also, you may need to use `parseInt` to cast the supplied `n` parameter to a number
 
-___
+
 #### `/namelength/:name`
 
 `GET` `/namelength/:name` should return the length of the supplied name
 
+___
 ### Fruit Routes
 #### `/fruits`
 
@@ -102,7 +103,7 @@ app.get('/fruits', (req, res) => {
 })
 ```
 
-___
+
 #### `/fruits/:name`
 
 Now let's add a route that takes a route parameter `name` and retrieves the fruit that matches the supplied name. 
