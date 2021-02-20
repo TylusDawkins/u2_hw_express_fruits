@@ -4,7 +4,7 @@
 
 ## Overview
 
-It's time to get some practice setting up an express server and writing a few routes.  Feel free to test these routes either with the browser's navbar, a small `node` script using `axios` or a toy react app with `axios`.
+It's time to get some practice setting up an express server and writing a few routes.  Feel free to test these routes either with the browser's navbar, a small `node` script using `axios` or a toy react app with connected with `axios`. We'll also be working with the data array in `fruits.js` to practice our routes.
 
 ## Getting Started
 
@@ -21,31 +21,38 @@ It's time to get some practice setting up an express server and writing a few ro
 	```
 
 ## Instructions
-
 ### Set up an Express server
 
 Let's write the boilerplate for an express server:
 
-- First, import `express` at the top of the file with:
-```js
-const express = require('express');
-```
-- Next, import `fruits` from fruits.js. 
-```js
-const fruits = require('./fruits');
-```
-- Go ahead and define a `PORT` constant variable, e.g., `const PORT = process.env.PORT || 3000;`
-- Init an `app` instance `const app = express();`
-- And finally bind the app to a port at the bottom of the file
+- First, import `express` by requiring it at the top of `index.js` with:
 	```js
-	app.listen(PORT, () => console.log(`up on port ${PORT}`))
+	const express = require('express');
+	```
+- Next, import `fruits` from fruits.js. 
+	```js
+	const fruits = require('./fruits');
+	```
+- Go ahead and define a `PORT` constant variable: 
+	```js
+	const PORT = process.env.PORT || 8000;
+	```
+- Init an `app` instance below your initial imports:
+	```js
+	const app = express();
+	```
+- You may want to create some space between your app instance and the step below since we'll be writing routes in between them shortly.
+- Finally, bind the app to a port with `app.listen()` at the bottom of the file:
+	```js
+	app.listen(PORT, () => console.log(`Serving up delicious fruits on port ${PORT} 🍒`))
 	```
 
-Now start the server from the terminal with `npm start`. If all goes well, you should see the message from the console log above in the console.  _Don't stop the server until you are done writing code or unless you just want to restart it._ If you save the `index.js` file the server should automatically re-load the changes.
+Now start the server from the terminal with `npm start`. If all goes well, you should see the message from the console log above in the console.  _Don't stop the server until you are done writing code or unless you just want to restart it._ If you save the `index.js` file the server should automatically re-load the changes and restart since we're using `nodemon` in our start script in `package.json`.
 
-### Adding the first Route
+___
+### Adding Routes
 
-Start off by defining a simple ping-pong route:
+Start off by defining a simple ping-pong GET route:
 
 ```js
 app.get('/ping', (req, res) => {
@@ -80,7 +87,7 @@ Also, you may need to use `parseInt` to cast the supplied `n` parameter to a num
 
 Let's add a route that retrieves all the fruits from our `fruits.js` file. Recall we imported it on top of our `index.js`.
 
-```
+```js
 app.get('/fruits', (req, res) => {
   //your code here 
   res.send()
@@ -89,7 +96,7 @@ app.get('/fruits', (req, res) => {
 #### /fruits/:name
 
 Now let's add a route that takes a route parameter `name` and retrieves the fruit that matches the supplied name. 
-```
+```js
 app.get('/fruits/:name', (req, res) => {
   //your code here
   // HINT - you can use a higher-order array method 
@@ -103,7 +110,7 @@ So when you call this route, `name` in the url should be a **capitalized** strin
 
 `GET` /fruits/sort should return the fruits array sorted alphabetically using `.sort`. 
 
-```
+```js
 app.get('/fruits/sort', (req, res) => {
   // implement sort
 
