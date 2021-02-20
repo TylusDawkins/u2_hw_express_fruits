@@ -52,7 +52,7 @@ Now start the server from the terminal with `npm start`. If all goes well, you s
 ___
 ### Adding Routes
 
-Start off by defining a simple ping-pong GET route:
+Start off by defining a simple ping-pong `GET` route:
 
 ```js
 app.get('/ping', (req, res) => {
@@ -60,30 +60,33 @@ app.get('/ping', (req, res) => {
 })
 ```
 
-Try to test this route out.
+Try to test this route out by navigating to `http://localhost:8000/ping` with your web browser.
+- Alternatively, you could test this route by using a tool like [Insomnia](https://insomnia.rest/) to make a `GET` request to the same URL.
 
-#### /greet/:name
+Now that's what I call computer ping-pong!
 
-`GET` /greet/:name should return a greeting with the supplied name, e.g., 'Why hello there, <name>!'
+#### `/greet/:name`
+
+`GET` `/greet/:name` should return a greeting with the supplied name, e.g., 'Why hello there, <name>!'
 
 Recall you can access the url parameters with `req.params`
 
-#### /five
+#### `/five`
 
-`GET` /five should return an array of the numbers from 1-5
+`GET` `/five` should return an array of the numbers from 1-5
 
-#### evens
-`GET` /evens/:n should return an array of even numbers from 2 up to and including `n`.  So when you call this route, `n` in the url should be a number.
+#### `evens`
+`GET` `/evens/:n` should return an array of even numbers from 2 up to and including `n`.  So when you call this route, `n` in the url should be a number.
 
 Also, you may need to use `parseInt` to cast the supplied `n` parameter to a number
 
-#### /namelength/:name
+#### `/namelength/:name`
 
-`GET` /namelength/:name should return the length of the supplied name
+`GET` `/namelength/:name` should return the length of the supplied name
 
-#### /fruits 
+#### `/fruits`
 
-`GET` /fruits should return an array with all the fruits.
+`GET` `/fruits` should return an array with all the fruits.
 
 Let's add a route that retrieves all the fruits from our `fruits.js` file. Recall we imported it on top of our `index.js`.
 
@@ -93,7 +96,7 @@ app.get('/fruits', (req, res) => {
   res.send()
 })
 ```
-#### /fruits/:name
+#### `/fruits/:name`
 
 Now let's add a route that takes a route parameter `name` and retrieves the fruit that matches the supplied name. 
 ```js
@@ -108,7 +111,7 @@ So when you call this route, `name` in the url should be a **capitalized** strin
 
 ## Bonus 
 
-`GET` /fruits/sort should return the fruits array sorted alphabetically using `.sort`. 
+`GET` `/fruits/sort` should return the fruits array sorted alphabetically using `.sort`. 
 
 ```js
 app.get('/fruits/sort', (req, res) => {
