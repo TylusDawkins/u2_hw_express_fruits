@@ -50,43 +50,38 @@ Let's write the boilerplate for an express server:
 Now start the server from the terminal with `npm start`. If all goes well, you should see the message from the console log above in the console.  _Don't stop the server until you are done writing code or unless you just want to restart it._ If you save the `index.js` file the server should automatically re-load the changes and restart since we're using `nodemon` in our start script in `package.json`.
 
 ___
-### Adding Routes
+### Adding Basic Routes
 
 Start off by defining a simple ping-pong `GET` route:
 
 ```js
 app.get('/ping', (req, res) => {
-	res.json('pong');
+  res.json('pong');
 })
 ```
 
-Try to test this route out by navigating to `http://localhost:8000/ping` with your web browser.
+- Try to test this route out by navigating to `http://localhost:8000/ping` with your web browser.
 - Alternatively, you could test this route by using a tool like [Insomnia](https://insomnia.rest/) to make a `GET` request to the same URL.
 
-Now that's what I call computer ping-pong!
+Now that's what I call computer ping-pong! Let's create a few more routes to ping our express server with below.
 
 
 #### `/greet/:name`
-
-`GET` `/greet/:name` should return a greeting with the supplied name, e.g., 'Why hello there, <name>!'
-
-Recall you can access the url parameters with `req.params`
+- `GET` `/greet/:name` should return a greeting with the supplied name, e.g., 'Why hello there, <name>!'
+- Recall you can access the url parameters with `req.params`
 
 
 #### `/five`
-
-`GET` `/five` should return an array of the numbers from 1-5
+- `GET` `/five` should return an array of the numbers from 1-5
 
 
 #### `evens`
-`GET` `/evens/:n` should return an array of even numbers from 2 up to and including `n`.  So when you call this route, `n` in the url should be a number.
-
-Also, you may need to use `parseInt` to cast the supplied `n` parameter to a number
+- `GET` `/evens/:n` should return an array of even numbers from 2 up to and including `n`.  So when you call this route, `n` in the url should be a number.
+- Also, you may need to use `parseInt` to cast the supplied `n` parameter to a number
 
 
 #### `/namelength/:name`
-
-`GET` `/namelength/:name` should return the length of the supplied name
+- `GET` `/namelength/:name` should return the length of the supplied name
 
 ___
 ### Fruit Routes
