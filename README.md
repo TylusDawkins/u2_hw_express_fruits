@@ -1,24 +1,28 @@
-# Intro Express Practice
+# 🍍🍇🍐 Express Fruits 🍓🍌🥭
 
-_Introduction_ 
+
+
+## Overview
 
 It's time to get some practice setting up an express server and writing a few routes.  Feel free to test these routes either with the browser's navbar, a small `node` script using `axios` or a toy react app with `axios`.
 
-### Up and Running
+## Getting Started
 
-- fork + clone this repo
+- `Fork` and `clone` this repo
 - `cd` into the repo
-- run `npm init -y`
-- install express and nodemon with `npm i express nodemon`
-- Add a `start` script to `package.json`:
+- `touch index.js` to create an entry point for your server
+- Run `npm init -y` to initialize your project as a `Node.js` project
+- Install express and nodemon with `npm i express nodemon`
+- Add a `start` script to `package.json` that will run nodemon on your server entry point:
 	```js
 	"scripts": {
 		"start": "nodemon index.js"
 	}
 	```
-- create an `index.js` file
 
-#### Set up an Express server
+## Instructions
+
+### Set up an Express server
 
 Let's write the boilerplate for an express server:
 
@@ -39,7 +43,7 @@ const fruits = require('./fruits');
 
 Now start the server from the terminal with `npm start`. If all goes well, you should see the message from the console log above in the console.  _Don't stop the server until you are done writing code or unless you just want to restart it._ If you save the `index.js` file the server should automatically re-load the changes.
 
-#### Adding the first Route
+### Adding the first Route
 
 Start off by defining a simple ping-pong route:
 
@@ -95,7 +99,7 @@ app.get('/fruits/:name', (req, res) => {
 Recall you can access the url parameters with `req.params`.
 So when you call this route, `name` in the url should be a **capitalized** string(refer to `fruits.js`, if you are unsure).
 
-### Bonus 
+## Bonus 
 
 `GET` /fruits/sort should return the fruits array sorted alphabetically using `.sort`. 
 
