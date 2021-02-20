@@ -84,7 +84,7 @@ app.get('/someroute', (req, res) => {
 	  app.get('/someroute', // callback here
 	  ```
 	  
-  The `.get()` method requires a callback function as its second argument. In the arguments for this callback function, we'll ALWAYS pass the Request followed by the Response object, typically with `(req, res)` for shorthand.
+  The `.get()` method requires a callback function as its second argument. In the arguments for this callback function, we'll always pass the Request followed by the Response object, typically with `(req, res)` for shorthand.
   
   - Inside the callback, we'll typically send some sort of `responseData` (_strings, arrays, objects, booleans, numbers_) related to the incoming request with the response object's `.send()` method
   
@@ -107,21 +107,25 @@ app.get('/someroute', (req, res) => {
 
 ___
 #### `/greet/:name`
-- `GET` `/greet/:name` should return a greeting with the supplied name, e.g., 'Why hello there, <name>!'
-- Recall you can access the url parameters with `req.params`
+`GET` `/greet/:name` should return a greeting with the supplied name, e.g., `'Why hello there, <name>!'`
+
+Recall you can access the URL parameters with `req.params`
 
 
 #### `/five`
-- `GET` `/five` should return an array of the numbers from 1-5
+`GET` `/five` should return an array of the numbers from 1-5
+
+Remember that you can create variables above your response
 
 
 #### `evens`
-- `GET` `/evens/:n` should return an array of even numbers from 2 up to and including `n`.  So when you call this route, `n` in the url should be a number.
-- Also, you may need to use `parseInt` to cast the supplied `n` parameter to a number
+`GET` `/evens/:n` should return an array of even numbers from 2 up to and including `n`.  So when you call this route, `n` in the URL should be a number.
+
+Also, you may need to use `parseInt()` to cast the supplied `n` parameter to a number when adding it to your array
 
 
 #### `/namelength/:name`
-- `GET` `/namelength/:name` should return the length of the supplied name
+`GET` `/namelength/:name` should return the length of the supplied name in the URL params
 
 ___
 ### Fruit Routes
