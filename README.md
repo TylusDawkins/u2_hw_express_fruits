@@ -105,6 +105,7 @@ app.get('/someroute', (req, res) => {
 	
 </details>
 
+___
 #### `/greet/:name`
 - `GET` `/greet/:name` should return a greeting with the supplied name, e.g., 'Why hello there, <name>!'
 - Recall you can access the url parameters with `req.params`
@@ -163,4 +164,10 @@ app.get('/fruits/sort', (req, res) => {
   res.send()
 })
 ```
+
+
+## Resources
+- [Additional Reading on req.params](https://coursework.vschool.io/express-params-and-query/)
+
+
 
