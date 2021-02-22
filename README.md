@@ -12,11 +12,13 @@ It's time to get some practice setting up an express server and writing a few ro
 - `cd` into the repo
 - `touch index.js` to create an entry point for your server
 - Run `npm init -y` to initialize your project as a `Node.js` project
-- Install express and nodemon with `npm i express nodemon`
-- Add a `start` script to `package.json` that will run nodemon on your server entry point:
+- Install express with `npm i express`
+- We'll install `nodemon` with `npm i --save-dev nodemon` to save it as a dev dependency
+- Add `start` and `dev` scripts to `package.json` that will run on your server's entry point:
 	```js
 	"scripts": {
-		"start": "nodemon index.js"
+		"start": "node index.js",
+		"dev": "nodemon index.js"
 	}
 	```
 
@@ -47,7 +49,7 @@ Let's write the boilerplate for an express server:
 	app.listen(PORT, () => console.log(`Serving up delicious fruits on port ${PORT} 🍒`))
 	```
 
-Now start the server from the terminal with `npm start`. If all goes well, you should see the message from the console log above in the console.  _Don't stop the server until you are done writing code or unless you just want to restart it._ If you save the `index.js` file the server should automatically re-load the changes and restart since we're using `nodemon` in our start script in `package.json`.
+Now start the server from the terminal with `npm run dev`. If all goes well, you should see the message from the console log above in the console.  _Don't stop the server until you are done writing code or unless you just want to restart it._ If you save the `index.js` file the server should automatically re-load the changes and restart since we're using `nodemon` in our `dev` script in `package.json`.
 
 ___
 ### Adding Basic Routes
