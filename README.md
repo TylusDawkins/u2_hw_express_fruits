@@ -21,6 +21,7 @@ It's time to get some practice setting up an express server and writing a few ro
 		"dev": "nodemon index.js"
 	}
 	```
+- `touch .gitignore`
 
 ## Instructions
 ### Set up an Express server
