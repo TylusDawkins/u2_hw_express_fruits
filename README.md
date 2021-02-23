@@ -37,7 +37,7 @@ Let's write the boilerplate for an express server:
 	```
 - Go ahead and define a `PORT` constant variable: 
 	```js
-	const PORT = process.env.PORT || 8000;
+	const PORT = process.env.PORT || 3001;
 	```
 - Init an `app` instance below your initial imports:
 	```js
@@ -62,7 +62,7 @@ app.get('/ping', (req, res) => {
 })
 ```
 
-- Try to test this route out by navigating to `http://localhost:8000/ping` with your web browser.
+- Try to test this route out by navigating to `http://localhost:3001/ping` with your web browser.
 - Alternatively, you could test this route by using a tool like [Insomnia](https://insomnia.rest/) to make a `GET` request to the same URL.
 
 Now that's what I call computer ping-pong! Let's create a few more routes to ping our express server with below. Before doing so, let's recall the basic syntax for an express `GET` route method made with an instance of express. In this case `app` is our express instance:
@@ -164,6 +164,7 @@ However, you might notice that the fruit names in `fruits.js` are **Capitalized*
 ___
 ## Requirements
 - The project must be initialized as a `Node.js` and set up as an express app.
+- All routes should be working on http://localhost:3001/
 - All basic routes must send the proper data specified for the route using express's request and response objects
 - All fruit routes must send the proper data specified for the route using express's request and response objects
 
@@ -195,7 +196,7 @@ app.get('/fruits/sort', (req, res) => {
    ```
    
    A couple important things to note:
-   - The `*` used for a route will cover _any_ route request made to our server, meaning that it will respond with this 404 message for any URL param chained on to `http://localhost:8000`
+   - The `*` used for a route will cover _any_ route request made to our server, meaning that it will respond with this 404 message for any URL param chained on to `http://localhost:3001`
    - That being said, since it will respond to _any_ route, we put it at the **bottom** of our server, so our other routes are still accessible while routes that don't exist will be sent to an error message
    - Use it wisely if you choose to
 
