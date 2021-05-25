@@ -164,10 +164,9 @@ However, you might notice that the fruit names in `fruits.js` are **Capitalized*
 
 ___
 ## Requirements
-- The project must be initialized as a `Node.js` and set up as an express app.
+- The project must be initialized with `npm init` and set up as an express app.
 - All routes should be working on http://localhost:3001/
-- All basic routes must send the proper data specified for the route using express's request and response objects
-- All fruit routes must send the proper data specified for the route using express's request and response objects
+- All routes must send the proper data specified for the route using express's request and response objects
 
 
 ## Bonus 
