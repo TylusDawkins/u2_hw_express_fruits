@@ -14,17 +14,21 @@ app.get('/ping', (req, res) => {
     res.json('pong');
   })
 
-app.get('/aroute',(req,res)=>{
+app.get('/route',(req,res)=>{
     res.send({msg:"This is a route"})
 })
 const greet = (req,res)=>{
     res.send({msg:`Why hello there, ${req.params.name}`})
 }
 app.get(`/greet/:name`,greet)
+
+
 const nums = [1,2,3,4,5]
-app.get('/five',(req,res)=>{
+app.get('/five_nums',(req,res)=>{
     res.send({nums})
 })
+
+
 app.get('/evens/:n', (req,res) =>{
     evens = []
     for(let i=2; i <= req.params.n;i++){
@@ -34,6 +38,7 @@ app.get('/evens/:n', (req,res) =>{
     }
     res.send({evens})
 })
+
 app.get('/namelength/:name', (req,res) =>{
     length  = req.params.name.length
     // nameInput = req.params.name
